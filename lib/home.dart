@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_wallet/RoundedImage.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,46 +27,52 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          child: const Column(
-            children: [
-              SizedBox(
-                height: 10,
-              ),
-              HedarSection(),
-              SizedBox(
-                height: 15,
-              ),
-              BalanceCard(),
-              SizedBox(
-                height: 25,
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      'Assets',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+          child: const SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                HedarSection(),
+                SizedBox(
+                  height: 15,
+                ),
+                BalanceCard(),
+                SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'Assets',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                  ),
-                  Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Colors.black,
+                    Spacer(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              WalletCard(),
-            ],
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                WalletCard(),
+                SizedBox(
+                  height: 53,
+                ),
+                BottomNavigationBar(), // This needs to be a widget in the body, not a separate Scaffold
+              ],
+            ),
           ),
         ),
       ),
@@ -186,7 +193,6 @@ class BalanceCard extends StatelessWidget {
                 ),
               ),
             ),
-
             SizedBox(height: 16), // Spacer
             const Text(
               'Account Balance',
@@ -477,6 +483,40 @@ class WalletCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class BottomNavigationBar extends StatelessWidget {
+  const BottomNavigationBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const GNav(
+      backgroundColor: Color.fromARGB(255, 224, 221, 221),
+      color: Color.fromARGB(255, 0, 0, 0),
+      activeColor: Color.fromARGB(255, 255, 255, 255),
+      tabBackgroundColor: Color.fromARGB(255, 14, 2, 74),
+      padding: EdgeInsets.all(15),
+      gap: 8,
+      tabs: [
+        GButton(
+          icon: Icons.home,
+          //text: 'Home',
+        ),
+        GButton(
+          icon: Icons.man_2_rounded,
+          //  text: 'Likes',
+        ),
+        GButton(
+          icon: Icons.wallet,
+          text: 'Search',
+        ),
+        GButton(
+          icon: Icons.favorite,
+          text: 'Settings',
+        ),
+      ],
     );
   }
 }
