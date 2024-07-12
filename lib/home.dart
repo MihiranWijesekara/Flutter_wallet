@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_wallet/RoundedImage.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -70,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 53,
                 ),
-                BottomNavigationBar(), // This needs to be a widget in the body, not a separate Scaffold
+                BottomNavigationBar(),
               ],
             ),
           ),
@@ -221,57 +219,80 @@ class BalanceCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(255, 131, 30, 149),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.bottomCenter, //bottomCenter
+                      end: Alignment.topCenter,
+                      colors: [
+                        Color.fromARGB(255, 50, 1, 60),
+                        Color.fromARGB(255, 190, 70, 246),
+                      ],
                     ),
-                    minimumSize: MaterialStateProperty.all<Size>(
-                      Size(150, 55),
-                    ),
+                    borderRadius: BorderRadius.circular(25.0),
                   ),
-                  child: const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(width: 5),
-                      Icon(
-                        Icons.arrow_outward,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Load',
-                        style: TextStyle(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(150, 55),
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(width: 5),
+                        Icon(
+                          Icons.arrow_outward,
                           color: Colors.white,
                         ),
-                      ),
-                    ],
+                        Text(
+                          'Load',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromARGB(255, 131, 30, 149)),
-                    minimumSize: MaterialStateProperty.all<Size>(Size(150, 55)),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.bottomCenter, //bottomCenter
+                      end: Alignment.topCenter,
+                      colors: [
+                        Color.fromARGB(255, 50, 1, 60),
+                        Color.fromARGB(255, 190, 70, 246),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(25.0),
                   ),
-                  child: const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(width: 5),
-                      Icon(
-                        Icons.download_sharp,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Withdraw',
-                        style: TextStyle(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(150, 55),
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(width: 5),
+                        Icon(
+                          Icons.download_sharp,
                           color: Colors.white,
                         ),
-                      ),
-                    ],
+                        Text(
+                          'Withdraw',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -309,8 +330,8 @@ class WalletCard extends StatelessWidget {
                 Text(
                   ' Card',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
                 ),
@@ -330,7 +351,7 @@ class WalletCard extends StatelessWidget {
                   '\$187.0',
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                 ),
@@ -356,8 +377,8 @@ class WalletCard extends StatelessWidget {
                 Text(
                   ' Cash',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
                 ),
@@ -377,7 +398,7 @@ class WalletCard extends StatelessWidget {
                   '\$345.0',
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                 ),
@@ -403,8 +424,8 @@ class WalletCard extends StatelessWidget {
                 Text(
                   ' Crypto',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
                 ),
@@ -424,7 +445,7 @@ class WalletCard extends StatelessWidget {
                   '\$470.0',
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                 ),
@@ -449,8 +470,8 @@ class WalletCard extends StatelessWidget {
                 Text(
                   ' Card',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
                 ),
@@ -470,7 +491,7 @@ class WalletCard extends StatelessWidget {
                   '\$247.0',
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                 ),
