@@ -1,2 +1,3 @@
 # flutter_wallet
-![image](https://github.com/user-attachments/assets/c80eb6e2-614f-435b-906e-24a5e30b6a66)
+![image](https://github.com/user-attachments/assets/b72e7023-fcc8-4176-b865-ce7f5c9f11b5)
+
