@@ -84,12 +84,10 @@ class HedarSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8.0), // Optional padding for better layout
+      padding: const EdgeInsets.all(8.0),
       child: Row(
-        crossAxisAlignment:
-            CrossAxisAlignment.center, // Center items vertically
-        mainAxisAlignment:
-            MainAxisAlignment.spaceBetween, // Distribute space between children
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const RoundedImage(
             imageUrl: 'assets/image/images1.png',
@@ -101,9 +99,7 @@ class HedarSection extends StatelessWidget {
               child: Text(
                 'Welcome',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold), // Optional style for text
+                style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -138,7 +134,7 @@ class BalanceCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -149,11 +145,11 @@ class BalanceCard extends StatelessWidget {
               ),
               child: Container(
                 height: 50,
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: const Center(
                         child: Icon(
                           Icons.more_horiz,
@@ -174,7 +170,7 @@ class BalanceCard extends StatelessWidget {
                       imageUrl: 'assets/image/USA.png',
                       isAssetImage: true,
                       radius: 30.0,
-                    ), // Pushes the next widget to the end
+                    ),
                     const Text(
                       'USD',
                       style: TextStyle(
@@ -191,7 +187,7 @@ class BalanceCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16), // Spacer
+            SizedBox(height: 16),
             const Text(
               'Account Balance',
               style: TextStyle(
@@ -215,14 +211,14 @@ class BalanceCard extends StatelessWidget {
                 color: Color.fromARGB(255, 77, 186, 80),
               ),
             ),
-            const SizedBox(height: 25), // Spacer
+            const SizedBox(height: 25),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      begin: Alignment.bottomCenter, //bottomCenter
+                      begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
                         Color.fromARGB(255, 50, 1, 60),
@@ -260,7 +256,7 @@ class BalanceCard extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      begin: Alignment.bottomCenter, //bottomCenter
+                      begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
                         Color.fromARGB(255, 50, 1, 60),
